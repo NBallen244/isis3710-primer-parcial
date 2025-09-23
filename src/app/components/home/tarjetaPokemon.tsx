@@ -1,15 +1,39 @@
 "use client"
 import { BgColorTypes, BorderColorTypes } from "@/app/colores";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { infoPok, Pokemon } from "./listaPokemones";
+import Image from "next/image";
+
 
 
 const TarjetaPokemon=({pokemon}:{pokemon:Pokemon})=>{
     const colorsType=BgColorTypes;
     const colorsBorder=BorderColorTypes;
-    const [info, setInfo]=useState();
+    
+    const [info, setInfo]=useState<infoPok>({
+        height:0,
+        weight:0,
+        abilities:[],
+        types:[{
+            slot: 0,
+      type: {
+        name: "",
+        url: "",
+      }
+    }
+    ],
+        sprites:{back_default:""}
+    });
+    useEffect(()=>{
+        fetch(`${pokemon.url}`).then(res=>res.json()).then(data=>setInfo(data));
+    },[]);
     return (
-        <div className="border border-[]">
-
+        <div className="border border-[] p-4">
+        <Image src={info.sprites.back_default!} alt={pokemon.name} width={200} height={300} className="w-48 h-48 mb-2 object-contain flex flex-col justify-center"/>
+        <h2 className="text-lg font-bold">{pokemon.name}</h2>
+        <h3 className="text-lg font-bold rounded-xl">{info.types[0].type.name}</h3>
         </div>
     );
 }
+
+export default TarjetaPokemon;

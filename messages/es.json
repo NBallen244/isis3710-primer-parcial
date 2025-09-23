@@ -5,5 +5,10 @@
   "Footer":{
     "rights":"Todos los derechos reservados",
     "develop": "Desarrollado para: "
+  },
+  "List":{
+    "listing":"Lista de Pokemones",
+    "no":"No se encontraron pokemons"
   }
+
 }
