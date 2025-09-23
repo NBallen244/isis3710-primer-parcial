@@ -1,5 +1,9 @@
 {
   "HomePage": {
     "title": "Hello world!"
+  },
+  "Footer":{
+    "rights":"All rights reserved",
+    "develop": "Developed for: "
   }
 }
