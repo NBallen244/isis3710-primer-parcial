@@ -8,6 +8,9 @@ export interface Pokemon{
     name:string;
     url:string;
 }
+export interface Lista{
+    results:Pokemon[];
+}
 export interface infoPok {
     height:number;
     weight:number;
@@ -26,7 +29,7 @@ const ListaPokemones= () =>{
     const t=useTranslations("List")
     const [list, setList]=useState<Pokemon[]>([]);
     useEffect(()=>{
-            fetch("https://pokeapi.co/api/v2/pokemon?limit=15").then(res=>res.json()).then(data=>setList(data));
+            fetch("https://pokeapi.co/api/v2/pokemon?limit=15").then(res=>res.json()).then(data=>setList(data.results));
     },[]);
     return (
         <div className="grid grid-cols-3 justify-items-center gap-10">

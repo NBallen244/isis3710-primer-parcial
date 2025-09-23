@@ -18,7 +18,7 @@ const TarjetaPokemon=({pokemon}:{pokemon:Pokemon})=>{
             slot: 0,
       type: {
         name: "",
-        url: "",
+        url: "/pokemon-logo.png",
       }
     }
     ],
@@ -28,8 +28,8 @@ const TarjetaPokemon=({pokemon}:{pokemon:Pokemon})=>{
         fetch(`${pokemon.url}`).then(res=>res.json()).then(data=>setInfo(data));
     },[]);
     return (
-        <div className="border border-[] p-4">
-        <Image src={info.sprites.back_default!} alt={pokemon.name} width={200} height={300} className="w-48 h-48 mb-2 object-contain flex flex-col justify-center"/>
+        <div className="border border-red-500 p-4">
+        <img src={info.sprites.back_default!} alt={pokemon.name}  className="w-48 h-48 mb-2 object-contain flex flex-col justify-center"/>
         <h2 className="text-lg font-bold">{pokemon.name}</h2>
         <h3 className="text-lg font-bold rounded-xl">{info.types[0].type.name}</h3>
         </div>

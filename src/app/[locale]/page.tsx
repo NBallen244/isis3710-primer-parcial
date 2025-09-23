@@ -1,7 +1,8 @@
 import {useTranslations} from 'next-intl';
+import ListaPokemones from '../components/home/listaPokemones';
 export default function Home() {
   const t = useTranslations('HomePage');
   return (
-    <h1>{t('title')}</h1>
+    <ListaPokemones/>
   );
 }
