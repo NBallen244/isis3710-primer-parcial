@@ -29,9 +29,11 @@ const TarjetaPokemon=({pokemon}:{pokemon:Pokemon})=>{
     },[]);
     return (
         <div className="border border-red-500 p-4">
-        <img src={info.sprites.back_default!} alt={pokemon.name}  className="w-48 h-48 mb-2 object-contain flex flex-col justify-center"/>
-        <h2 className="text-lg font-bold">{pokemon.name}</h2>
-        <h3 className="text-lg font-bold rounded-xl">{info.types[0].type.name}</h3>
+        <Link hred="/detail/">
+        <img src={info.sprites.back_default!} alt={pokemon.name}  className="w-48 h-48 mb-2 object-contain flex flex-col justify-items-center"/>
+        <h2 className="text-lg font-bold text-black">{pokemon.name}</h2>
+        <h3 className="text-lg font-bold rounded-xl text-black bg-green-500">{info.types[0].type.name}</h3>
+        </Link>
         </div>
     );
 }
