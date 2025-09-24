@@ -37,3 +37,11 @@ psychic: 'border-[#f85888]',
 rock: 'border-[#b8a038]',
 water: 'border-[#6890f0]',
 }
+
+export const getBgColor=(type: string) => {
+    console.log(BgColorTypes[type as keyof typeof BgColorTypes]);
+    return BgColorTypes[type as keyof typeof BgColorTypes] || 'bg-red-500';
+}
+export const getBorderColor=(type: string) => {
+    return BorderColorTypes[type as keyof typeof BorderColorTypes] || 'border-red-500';
+}
