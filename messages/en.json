@@ -9,6 +9,13 @@
   "List":{
     "listing":"List of Pokemons",
     "no":"No pokemons found"
+  },
+  "Detail":{
+    "detail":"Detalles del pokemon",
+    "height":"Altura",
+    "weight":"Peso",
+    "abilities":"Habilidades",
+    "types":"Tipos"
   }
 
 }

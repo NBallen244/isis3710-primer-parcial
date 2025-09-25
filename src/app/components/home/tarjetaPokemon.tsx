@@ -44,12 +44,16 @@ const TarjetaPokemon=({pokemon}:{pokemon:Pokemon})=>{
     useEffect(()=>{
         fetch(`${pokemon.url}`).then(res=>res.json()).then(data=>setInfo(data));
     },[]);
+
+    const setText=(text:string)=>{
+        return text.charAt(0).toUpperCase()+text.slice(1);
+    };
     return (
         <Link href={`/details/${info.id}`}>
-        <div className={`border ${getBorderColor(info.types[0].type.name)} border-10 p-4 size-100 flex flex-col justify-items-center items-center rounded-xl`}>
-        <img src={info.sprites.front_default!} alt={pokemon.name}  className="w-75 h-75 mb-2 object-contain flex flex-col justify-items-center"/>
-        <h2 className="text-lg font-bold text-black">{pokemon.name}</h2>
-        <div className={`${getBgColor(info.types[0].type.name)} rounded-xl`}><h3 className={`text-lg font-bold text-black`}>{info.types[0].type.name}</h3></div>
+        <div className={`border ${getBorderColor(info.types[0].type.name)} border-10 p-4 h-100 w-full flex flex-col justify-items-center items-center rounded-xl bg-white`}>
+        <img src={info.sprites.front_default!} alt={pokemon.name}  className="w-full h-3/4 object-fill flex flex-col justify-items-center bg-gray-300"/>
+        <h2 className="text-lg font-bold text-black">{setText(pokemon.name)}</h2>
+        <div className={`${getBgColor(info.types[0].type.name)} rounded-xl px-2`}><h3 className={`text-lg font-bold text-white`}>{setText(info.types[0].type.name)}</h3></div>
         </div>
         </Link>
     );

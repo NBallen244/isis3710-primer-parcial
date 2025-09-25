@@ -1,7 +1,12 @@
-"use client";
+
 
 import DetallePokemon from '@/app/components/details/detalles';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Detalle del Pokémon - PokeApp",
+  description: "Consulta información detallada de cada Pokémon: estadísticas, tipos, habilidades y otros datos relevantes de la primera generación",
+};
 
 export default async function Page({
   params,
