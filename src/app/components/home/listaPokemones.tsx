@@ -1,5 +1,4 @@
 "use client";
-import { BgColorTypes, BorderColorTypes } from "@/app/colores";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import TarjetaPokemon from "./tarjetaPokemon";
