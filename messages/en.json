@@ -11,11 +11,11 @@
     "no":"No pokemons found"
   },
   "Detail":{
-    "detail":"Detalles del pokemon",
-    "height":"Altura",
-    "weight":"Peso",
-    "abilities":"Habilidades",
-    "types":"Tipos"
+    "detail":"Pokemon Details",
+    "height":"Height",
+    "weight":"Weight",
+    "abilities":"Abilities",
+    "types":"Types"
   }
 
 }
